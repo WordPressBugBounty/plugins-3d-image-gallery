@@ -3,7 +3,7 @@ Contributors: bplugins, abuhayat, charlescormier
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, gallery, image gallery, image slider, Gutenberg block
 Requires at least: 6.2+
-Tested up to: 6.6.2
+Tested up to: 6.7.1
 Stable tag: 1.0.7
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -105,33 +105,6 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
-
-= 1.0.7 - 11 Jun 24 =
-* Fix the image height issue on Firefox
-
-= 1.0.6 =
-* Fix Issue
-
-= 1.0.5 =
-* Add translate feature
-
-= 1.0.4 =
-* Fix Render Issue
-
-= 1.0.3 =
-* Fix the issue.
-
-= 1.0.2 =
-* Performance improvements.
-
-= 1.0.1 =
-* Fix Typography
-
-= 1.0.0 =
-* Initial Release
-
-
-== Upgrade Notice ==
 
 = 1.0.7 - 11 Jun 24 =
 * Fix the image height issue on Firefox
