@@ -3,7 +3,7 @@ Contributors: bplugins, abuhayat, charlescormier
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, gallery, image gallery, image slider, Gutenberg block
 Requires at least: 6.2+
-Tested up to: 6.7.1
+Tested up to: 6.8.1
 Stable tag: 1.0.7
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -125,7 +125,7 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 * Performance improvements.
 
 = 1.0.1 =
-* Fix Typography
+* Fix Typography.
 
 = 1.0.0 =
-* Initial Release
+* Initial Release.
