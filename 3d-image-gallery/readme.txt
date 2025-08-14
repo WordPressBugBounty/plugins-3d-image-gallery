@@ -1,26 +1,42 @@
-=== Image Gallery block - Create and display photo gallery/photo album. ===
-Contributors: bplugins, abuhayat, charlescormier
+=== Image Gallery Block – Create and Display Photo Galleries ===
+Contributors: bplugins, himur98, abuhayat, charlescormier, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, gallery, image gallery, image slider, Gutenberg block
-Requires at least: 6.2+
+Requires at least: 6.5+
 Tested up to: 6.8.1
-Stable tag: 1.0.7
+Stable tag: 2.0.0
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Create and display photo gallery/photo album.
+Create and Display Photo Galleries.
 
 == Description ==
 
-Image Gallery is a lightweight and powerful image gallery with lots of advanced options to create responsive image galleries with beautiful popups.
+Image Gallery is a lightweight, powerful WordPress block for creating responsive galleries with beautiful popups. Free offers basic styling and management for Default and Style One; Pro unlocks advanced styles, image, card, and button customization.
 
 
 **[Demos](https://bblockswp.com/demo/b-image-gallery/)**
 
 
-= Features =
-- **Fully Customizable**: All the options you need to arrange the showcase to your liking are available here.
+= Features For Free=
+- **Add, remove, duplicate, and edit gallery item titles, subtitles, and images for styleDefault.
+- **Configure gallery background (gradient) and shadow/hover shadow (offset, blur, spread, color) for styleDefault.
+- **Customize title and subtitle font sizes (desktop, tablet, mobile) for styleDefault.
+- **Adjust columns (1–6), column gap, and row gap per device for styleDefault.
+- **Set title/description font, color, and title margin for styleOne.
+- **Toggle and format date display (e.g., MM-DD-YYYY) with a date picker for styleOne.
+- **Configure card shadow, hover shadow, and modal title/description font and color for styleOne.
+
+
+= Features For Pro=
+- **Access premium gallery styles (styleTwo, styleThree, styleFour, styleFive, styleSix, styleSeven) for diverse layouts.
+- **Add, remove, and sort images with a sortable design for premium styles.
+- **Customize title font, color, margin, overlay, and padding for styleTwo, styleThree, styleFour, styleFive.
+- **Set image border radius, overlay color, shadow, hover shadow, size, and gap for styleTwo, styleThree, styleFive, styleSix.
+- **Adjust card border radius, shadow, width, height, gap, and alignment for styleFour.
+- **Configure button icons, colors, border radius, size, and positioning for styleSeven.
+- **Customize container background, border radius, margin, padding, width, height, and slider height for premium styles.
 
 
 = How to use =
@@ -66,7 +82,7 @@ Image Gallery is a lightweight and powerful image gallery with lots of advanced 
 = Download & Upload: =
 1. Download the **Image Gallery** plugin (*.zip file*)
 2. In your admin area, go to the Plugins menu and click on **Add New**
-3. Click on **Upload Plugin** and choose the **`b-image-gallery.zip`** file and click on **Install Now**
+3. Click on **Upload Plugin** and choose the **`3d-image-gallery.zip`** file and click on **Install Now**
 4. Activate the plugin and Enjoy!
 
 = Manually: =
@@ -94,7 +110,7 @@ You can use unlimited times as you want.
 
 = Where can I get support? =
 
-You can post your questions on the [support forum here](https://wordpress.org/support/plugin/b-image-gallery/)
+You can post your questions on the [support forum here](https://wordpress.org/support/plugin/3d-image-gallery/)
 
 
 == Screenshots ==
@@ -105,6 +121,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+
+= 2.0.0 - 14 Aug 25 =
+* Added Seven New Styles
 
 = 1.0.7 - 11 Jun 24 =
 * Fix the image height issue on Firefox
@@ -125,7 +144,7 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 * Performance improvements.
 
 = 1.0.1 =
-* Fix Typography.
+* Fix Typography
 
 = 1.0.0 =
 * Initial Release.
