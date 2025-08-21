@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, gallery, image gallery, image slider, Gutenberg block
 Requires at least: 6.5+
 Tested up to: 6.8.1
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -19,24 +19,24 @@ Image Gallery is a lightweight, powerful WordPress block for creating responsive
 **[Demos](https://bblockswp.com/demo/b-image-gallery/)**
 
 
-= Features For Free=
-- **Add, remove, duplicate, and edit gallery item titles, subtitles, and images for styleDefault.
-- **Configure gallery background (gradient) and shadow/hover shadow (offset, blur, spread, color) for styleDefault.
-- **Customize title and subtitle font sizes (desktop, tablet, mobile) for styleDefault.
-- **Adjust columns (1–6), column gap, and row gap per device for styleDefault.
-- **Set title/description font, color, and title margin for styleOne.
-- **Toggle and format date display (e.g., MM-DD-YYYY) with a date picker for styleOne.
-- **Configure card shadow, hover shadow, and modal title/description font and color for styleOne.
+= Features For Free =
+- Add, remove, duplicate, and edit gallery item titles, subtitles, and images for styleDefault.
+- Configure gallery background (gradient) and shadow/hover shadow (offset, blur, spread, color) for styleDefault.
+- Customize title and subtitle font sizes (desktop, tablet, mobile) for styleDefault.
+- Adjust columns (1–6), column gap, and row gap per device for styleDefault.
+- Set title/description font, color, and title margin for styleOne.
+- Toggle and format date display (e.g., MM-DD-YYYY) with a date picker for styleOne.
+- Configure card shadow, hover shadow, and modal title/description font and color for styleOne.
 
 
-= Features For Pro=
-- **Access premium gallery styles (styleTwo, styleThree, styleFour, styleFive, styleSix, styleSeven) for diverse layouts.
-- **Add, remove, and sort images with a sortable design for premium styles.
-- **Customize title font, color, margin, overlay, and padding for styleTwo, styleThree, styleFour, styleFive.
-- **Set image border radius, overlay color, shadow, hover shadow, size, and gap for styleTwo, styleThree, styleFive, styleSix.
-- **Adjust card border radius, shadow, width, height, gap, and alignment for styleFour.
-- **Configure button icons, colors, border radius, size, and positioning for styleSeven.
-- **Customize container background, border radius, margin, padding, width, height, and slider height for premium styles.
+= Features For Pro =
+- Access premium gallery styles (styleTwo, styleThree, styleFour, styleFive, styleSix, styleSeven) for diverse layouts.
+- Add, remove, and sort images with a sortable design for premium styles.
+- Customize title font, color, margin, overlay, and padding for styleTwo, styleThree, styleFour, styleFive.
+- Set image border radius, overlay color, shadow, hover shadow, size, and gap for styleTwo, styleThree, styleFive, styleSix.
+- Adjust card border radius, shadow, width, height, gap, and alignment for styleFour.
+- Configure button icons, colors, border radius, size, and positioning for styleSeven.
+- Customize container background, border radius, margin, padding, width, height, and slider height for premium styles.
 
 
 = How to use =
@@ -118,9 +118,20 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 1. Settings
 2. Image Gallery - Default
 3. Image Gallery - Full Width
+4. Image Gallery - Polaroid
+5. Image Gallery - Masonry
+6. Image Gallery - Dynamic Motion
+7. Image Gallery - 3d Parallax
+8. Image Gallery - 3d Slider
+9. Image Gallery - Hexagonal
+10. Image Gallery - Simple Swiper
+
 
 
 == Changelog ==
+
+= 2.0.1 - 21 Aug 25 =
+* Plugin activation fatal error fixed
 
 = 2.0.0 - 14 Aug 25 =
 * Added Seven New Styles

@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Image Gallery - Block
  * Description: Create and Display Photo Galleries.
- * Version: 2.0.0
+ * Version: 2.0.1
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3

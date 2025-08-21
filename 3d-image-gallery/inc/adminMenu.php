@@ -2,9 +2,9 @@
 if (! defined('ABSPATH')) {
     exit;
 }
-if (! class_exists('bsbAdminMenu')) {
+if (! class_exists('igbAdminMenu')) {
 
-    class icbAdminMenu
+    class igbAdminMenu
     {
 
         public function __construct()
@@ -188,5 +188,5 @@ if (! class_exists('bsbAdminMenu')) {
             }
         }
     }
-    new icbAdminMenu();
+    new igbAdminMenu();
 }
