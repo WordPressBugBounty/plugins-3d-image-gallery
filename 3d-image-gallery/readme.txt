@@ -1,5 +1,5 @@
 === Image Gallery Block – Create and Display Photo Galleries ===
-Contributors: bplugins, himur98, abuhayat, charlescormier, freemius
+Contributors: bplugins, himur98, abuhayat, charlescormier
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, gallery, image gallery, image slider, Gutenberg block
 Requires at least: 6.5+
@@ -111,6 +111,10 @@ You can use unlimited times as you want.
 = Where can I get support? =
 
 You can post your questions on the [support forum here](https://wordpress.org/support/plugin/3d-image-gallery/)
+
+= Where do I report security bugs found in this plugin? =
+
+Please report security bugs found in the source code of the Image Gallery block – Create and display photo gallery/photo album. plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/9e5fc6a4-e1c2-43ce-be03-f518a3f38622). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
 
 == Screenshots ==
