@@ -31,6 +31,3 @@ class UpgradePage
 	<?php }
 }
 new UpgradePage;
-
-
-

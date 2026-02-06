@@ -2,6 +2,7 @@
 if (! defined('ABSPATH')) {
     exit;
 }
+
 if (! class_exists('igbAdminMenu')) {
 
     class igbAdminMenu
@@ -16,12 +17,10 @@ if (! class_exists('igbAdminMenu')) {
             add_action('wp_ajax_get_active_plugins', [$this, 'get_active_plugins']);
             add_action('admin_notices', [$this, 'display_activation_notice']);
             add_action('wp_ajax_activated_plugin', [$this, 'activated_plugin']);
-
         }
 
         public function adminEnqueueScripts($hook)
         {
-
             if ('tools_page_3d-image-gallery-dashboard' === $hook) {
                 wp_enqueue_style('ig-admin-style', BIGB_DIR_URL . 'build/admin/admin.css', false, BIGB_PLUGIN_VERSION);
                 wp_enqueue_script('ig-admin-script', BIGB_DIR_URL . 'build/admin/admin.js', ['react', 'react-dom', 'wp-data', "wp-api", "wp-util", "wp-i18n"], BIGB_PLUGIN_VERSION, true);
@@ -37,7 +36,6 @@ if (! class_exists('igbAdminMenu')) {
         public function adminMenu()
         {
             $menuIcon = " <svg xmlns='http://www.w3.org/2000/svg' fill='#a7aaad' width='24' height='24' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><path d='M20 4v12H8V4h12m0-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 9.67l1.69 2.26 2.48-3.1L19 15H9zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z'></path></svg>";
-
 
             add_submenu_page(
                 "tools.php",
@@ -69,7 +67,6 @@ if (! class_exists('igbAdminMenu')) {
             }
 
             // new line end
-
             if (! function_exists('plugins_api')) {
                 require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
             }
@@ -84,13 +81,12 @@ if (! class_exists('igbAdminMenu')) {
 
         public function get_active_plugins()
         {
-
             // new line start
             if (! current_user_can('activate_plugins')) {
                 wp_send_json_error(['message' => 'You are not allowed to perform this action.'], 403);
             }
-            // new line end
 
+            // new line end
             if (! isset($_GET['nonce']) || ! wp_verify_nonce(sanitize_text_field($_GET['nonce']), 'wp_rest')) {
                 wp_send_json_error(['message' => 'Invalid nonce or request.'], 400);
             }
@@ -130,17 +126,17 @@ if (! class_exists('igbAdminMenu')) {
                 // Display notice with activation button
                 ?>
                 <div class="notice notice-success is-dismissible bblocks-notice">
-                    <p><?php esc_html_e(" $cleaned_string plugin was successfully installed.", 'bblocks-admin-bar'); ?></p>
+                    <p><?php esc_html_e(" $cleaned_string plugin was successfully installed.", 'image-gallery'); ?></p>
                     <p>
                         <a href="<?php echo esc_url($activation_url); ?>" class="button button-primary">
-                            <?php esc_html_e('Activate Plugin', 'bblocks-admin-bar'); ?>
+                            <?php esc_html_e('Activate Plugin', 'image-gallery'); ?>
                         </a>
                     </p>
                 </div>
                 <?php
             }
         }
-
+  
         public function activated_plugin()
         {
             // new line start

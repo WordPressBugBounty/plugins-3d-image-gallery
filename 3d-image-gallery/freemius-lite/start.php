@@ -1,6 +1,6 @@
 <?php
 
-$this_sdk_version = '2.1.1';
+$this_sdk_version = '2.1.3';
 if ( !class_exists( 'BPluginsFSLite' ) ) {
     require_once dirname( __FILE__ ) . '/require.php';
     class BPluginsFSLite {
@@ -68,7 +68,7 @@ if ( !function_exists( 'fs_lite_dynamic_init' ) ) {
             $fs = new BPluginsFSLite($module);
             return $fs;
         } catch ( \Throwable $th ) {
-            throw new Exception($th->getMessage());
+            throw $th->getMessage();
         }
     }
 

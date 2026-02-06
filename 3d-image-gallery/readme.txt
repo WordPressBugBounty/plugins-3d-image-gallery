@@ -3,8 +3,8 @@ Contributors: bplugins, himur98, abuhayat, charlescormier
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, gallery, image gallery, image slider, Gutenberg block
 Requires at least: 6.5+
-Tested up to: 6.8.1
-Stable tag: 2.0.1
+Tested up to: 6.9
+Stable tag: 2.1.5
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -16,7 +16,7 @@ Create and Display Photo Galleries.
 Image Gallery is a lightweight, powerful WordPress block for creating responsive galleries with beautiful popups. Free offers basic styling and management for Default and Style One; Pro unlocks advanced styles, image, card, and button customization.
 
 
-**[Demos](https://bblockswp.com/demo/b-image-gallery/)**
+**[Image Gallery](https://bplugins.com/products/3d-image-gallery/) | [Demos](https://bblockswp.com/demo/image-gallery-default/)**
 
 
 = Features For Free =
@@ -121,18 +121,31 @@ Please report security bugs found in the source code of the Image Gallery block 
 
 1. Settings
 2. Image Gallery - Default
-3. Image Gallery - Full Width
-4. Image Gallery - Polaroid
-5. Image Gallery - Masonry
-6. Image Gallery - Dynamic Motion
-7. Image Gallery - 3d Parallax
-8. Image Gallery - 3d Slider
-9. Image Gallery - Hexagonal
-10. Image Gallery - Simple Swiper
+3. Image Gallery - Polaroid
+4. Image Gallery - Masonry
+5. Image Gallery - Dynamic Motion
+6. Image Gallery - 3d Parallax
+7. Image Gallery - 3d Slider
+8. Image Gallery - Hexagonal
+9. Image Gallery - Simple Swiper
 
 
 
 == Changelog ==
+
+= 2.1.5 - 14 Jan 26 =
+* Added: New Screenshots
+* Fixed: Frontend View Issue
+
+= 2.1.4 - 13 Jan 26 =
+* Added: New Features
+* Fixed: Theme Change Tooltip Issue
+
+= 2.0.2 - 18 Nov 25 =
+* Added: Inline Script
+
+= 2.0.2 - 04 Nov 25 =
+* SDK updated
 
 = 2.0.1 - 21 Aug 25 =
 * Plugin activation fatal error fixed

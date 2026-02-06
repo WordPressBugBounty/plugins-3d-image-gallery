@@ -1,5 +1,6 @@
 {
   "apiVersion": 2,
+  "version": "2.1.4",
   "name": "bigb/image-gallery",
   "title": "Image Gallery",
   "description": "Create and Display Photo Galleries",
@@ -175,11 +176,9 @@
   },
   "editorScript": [
     "file:./index.js",
-    "file:./admin/admin.js",
     "wp-api"
   ],
   "editorStyle": "file:./index.css",
   "style": "file:./view.css",
-  "render": "file:./render.php",
-  "script": "file:./view.js"
+  "render": "file:./render.php"
 }
