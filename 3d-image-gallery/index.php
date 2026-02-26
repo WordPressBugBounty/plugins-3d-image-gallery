@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Image Gallery - Block
  * Description: Create and Display Photo Galleries.
- * Version: 2.2.6
+ * Version: 2.2.7
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -15,12 +15,13 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
+
 // } else {
   if ( function_exists( 'ig_fs' ) ) {
         ig_fs()->set_basename( false, __FILE__ );
     } else {
 	// Constant
-	define('BIGB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.2.6');
+	define('BIGB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.2.7');
 	define('BIGB_DIR_URL', plugin_dir_url(__FILE__));
 	define('BIGB_DIR_PATH', plugin_dir_path(__FILE__));
 	define('BIGB_HAS_PRO', file_exists(BIGB_DIR_PATH . 'vendor/freemius/start.php'));
@@ -36,7 +37,7 @@ if (! defined('ABSPATH')) {
 		require_once BIGB_DIR_PATH . 'includes/LicenseActivation.php';
 	}
 
-	
+
 	function ig_IsPremium()
 	{
 		return BIGB_HAS_PRO ? ig_fs()->can_use_premium_code() : false;
