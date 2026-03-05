@@ -1,49 +1,48 @@
 === Image Gallery Block – Create and display photo gallery/photo album. ===
 Contributors: bplugins, himur98, abuhayat, charlescormier, freemius
-Donate link: https://www.buymeacoffee.com/abuhayat
-Tags: block, gallery, image gallery, image slider, Gutenberg block
-Requires at least: 6.5+
-Tested up to: 6.9
-Stable tag: 2.2.7
+Donate link: https://www.buymeacoffee.com
+Tags: image gallery, gallery block, photo gallery, image slider, masonry gallery
+Requires at least: 6.5
+Tested up to: 6.7
+Stable tag: 2.2.8
 Requires PHP: 7.1
 License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: http://www.gnu.org
 
-Create and display photo gallery/photo album.
+Create responsive photo galleries, masonry layouts, and 3D sliders. A lightweight image gallery block for professional layouts and lightbox effects.
+
 
 == Description ==
 
-Image Gallery is a lightweight, powerful WordPress block for creating responsive galleries with beautiful popups. Free offers basic styling and management for Default and Style One; Pro unlocks advanced styles, image, card, and button customization.
+== Description ==
 
+Image Gallery Block is a lightweight, powerful solution to create and display photo gallery/photo album layouts within the WordPress editor. Easily build responsive grids with beautiful popup lightboxes. The Free version includes professional styling for the Classic and Polaroid layouts; Pro unlocks advanced 3D sliders, masonry grids, and full design customization.
 
-**[Image Gallery](https://bplugins.com/products/image-gallery-block/) | [Demos](https://bblockswp.com/demo/image-gallery-default/)**
+**[Image Gallery](https://bplugins.com/products/3d-image-gallery/) | [Demos](https://bblockswp.com/demo/image-gallery-default/)**
 
+= Free Features =
+- Quick setup to create and display photo gallery/photo album designs.
+- Responsive Layouts: Choose from Classic Grid or Polaroid styles.
+- Content Management: Add, remove, duplicate, and edit titles, subtitles, and images.
+- Appearance: Configure gradients, shadows (blur, spread, color), and hover effects.
+- Typography: Full control over font sizes for desktop, tablet, and mobile.
+- Responsive Grids: Adjust columns (1–6) and gaps per device.
+- Date Display: Toggle and format dates with a built-in date picker.
 
-= Features For Free =
-- Add, remove, duplicate, and edit gallery item titles, subtitles, and images for styleDefault.
-- Configure gallery background (gradient) and shadow/hover shadow (offset, blur, spread, color) for styleDefault.
-- Customize title and subtitle font sizes (desktop, tablet, mobile) for styleDefault.
-- Adjust columns (1–6), column gap, and row gap per device for styleDefault.
-- Set title/description font, color, and title margin for styleOne.
-- Toggle and format date display (e.g., MM-DD-YYYY) with a date picker for styleOne.
-- Configure card shadow, hover shadow, and modal title/description font and color for styleOne.
-
-
-= Features For Pro =
-- Access premium gallery styles (styleTwo, styleThree, styleFour, styleFive, styleSix, styleSeven) for diverse layouts.
-- Add, remove, and sort images with a sortable design for premium styles.
-- Customize title font, color, margin, overlay, and padding for styleTwo, styleThree, styleFour, styleFive.
-- Set image border radius, overlay color, shadow, hover shadow, size, and gap for styleTwo, styleThree, styleFive, styleSix.
-- Adjust card border radius, shadow, width, height, gap, and alignment for styleFour.
-- Configure button icons, colors, border radius, size, and positioning for styleSeven.
-- Customize container background, border radius, margin, padding, width, height, and slider height for premium styles.
-
+= Pro Features =
+- Premium Styles: Access Masonry, Dynamic Motion, 3D Parallax, and Hexagonal layouts.
+- Advanced Sorting: Drag-and-drop sortable image management.
+- Custom Overlays: Tailor overlay colors, margins, and padding.
+- Card & Button Design: Customize border radius, widths, and positioning.
+- 3D Sliders: Create interactive 3D slider galleries with navigation icons.
+- Global Containers: Full control over background, margins, and padding.
 
 = How to use =
-- First, install the Image Gallery plugin
-- Add the Image Gallery from the block category called "Widgets" in the Gutenberg editor.
-- You can change block settings from the right-side settings sidebar.
-- Enjoy!
+1. Install and activate the Image Gallery plugin.
+2. Open the Gutenberg editor and click the '+' icon.
+3. Search for "Image Gallery" under the "Widgets" category.
+4. Customize your layout using the right-side settings sidebar.
+
 
 * For installation help click on Installation Tab
 
@@ -132,6 +131,9 @@ Please report security bugs found in the source code of the Image Gallery block 
 
 
 == Changelog ==
+
+= 2.2.8 - 05 Feb 26 =
+* Fixed: Product landing page link not working
 
 = 2.2.7 - 26 Feb 26 =
 * Fixed: Freemius Lite SDK Security Vulnerability
