@@ -1,53 +1,70 @@
 === Image Gallery Block – Create and display photo gallery/photo album. ===
 Contributors: bplugins, himur98, abuhayat, charlescormier, freemius
 Donate link: https://www.buymeacoffee.com
-Tags: image gallery, gallery block, photo gallery, image slider, masonry gallery
+Tags: image gallery block, gallery block, photo gallery, image slider, masonry gallery
 Requires at least: 6.5
 Tested up to: 6.7
-Stable tag: 2.2.8
+Stable tag: 2.2.9
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org
 
-Create responsive photo galleries, masonry layouts, and 3D sliders. A lightweight image gallery block for professional layouts and lightbox effects.
-
-
-== Description ==
+Image Gallery Block helps you create responsive photo galleries, masonry layouts, and 3D sliders. Offers professional layouts and lightbox effects.
 
 == Description ==
 
-Image Gallery Block is a lightweight, powerful solution to create and display photo gallery/photo album layouts within the WordPress editor. Easily build responsive grids with beautiful popup lightboxes. The Free version includes professional styling for the Classic and Polaroid layouts; Pro unlocks advanced 3D sliders, masonry grids, and full design customization.
+[Image Gallery Block](https://bplugins.com/products/3d-image-gallery/) is a lightweight Gutenberg plugin that helps you create responsive image galleries and photo albums in WordPress with ease. Display images in elegant grid layouts, stylish cards, or interactive sliders—all directly inside the WordPress block editor.
 
-**[Image Gallery](https://bplugins.com/products/3d-image-gallery/) | [Demos](https://bblockswp.com/demo/image-gallery-default/)**
+[Image Gallery Block](https://bplugins.com/products/3d-image-gallery/) | [Pricing](https://bplugins.com/products/3d-image-gallery/pricing/) | [Support](https://bplugins.com/support/)| [Demo](https://bblockswp.com/demo/image-gallery-default/)
 
-= Free Features =
-- Quick setup to create and display photo gallery/photo album designs.
-- Responsive Layouts: Choose from Classic Grid or Polaroid styles.
-- Content Management: Add, remove, duplicate, and edit titles, subtitles, and images.
-- Appearance: Configure gradients, shadows (blur, spread, color), and hover effects.
-- Typography: Full control over font sizes for desktop, tablet, and mobile.
-- Responsive Grids: Adjust columns (1–6) and gaps per device.
-- Date Display: Toggle and format dates with a built-in date picker.
+Whether you want to build a photography portfolio, product gallery, blog image showcase, or visual storytelling page, this gallery block makes it simple to organize and present images with modern layouts and popup lightboxes.
 
-= Pro Features =
-- Premium Styles: Access Masonry, Dynamic Motion, 3D Parallax, and Hexagonal layouts.
-- Advanced Sorting: Drag-and-drop sortable image management.
-- Custom Overlays: Tailor overlay colors, margins, and padding.
-- Card & Button Design: Customize border radius, widths, and positioning.
-- 3D Sliders: Create interactive 3D slider galleries with navigation icons.
-- Global Containers: Full control over background, margins, and padding.
+The plugin works seamlessly with the Gutenberg block editor, allowing you to create professional image galleries without coding.
 
-= How to use =
-1. Install and activate the Image Gallery plugin.
-2. Open the Gutenberg editor and click the '+' icon.
-3. Search for "Image Gallery" under the "Widgets" category.
-4. Customize your layout using the right-side settings sidebar.
+=== Key Features – Free Version ===
+- **Easy Image Gallery Creation**: Quickly create and display photo galleries or photo albums directly inside the Gutenberg editor.
+- **Responsive Gallery Layouts**: Choose from Classic Grid and Polaroid styles that automatically adapt to desktop, tablet, and mobile devices.
+- **Built-in Lightbox Popup**: Allow visitors to open images in a clean popup lightbox for a better viewing experience.
+- **Flexible Grid Controls**: Adjust gallery columns (1–6) and spacing to create responsive image gallery layouts.
+- **Image & Content Management**: Add, remove, duplicate, and edit gallery images, titles, and subtitles easily.
+- **Typography Controls**: Customize text sizes for titles and subtitles with responsive settings for desktop, tablet, and mobile.
+- **Styling Options**: Design gallery cards using gradients, shadows, and hover effects.
+- **Date Display Controls**: Show or hide image dates and format them using the built-in date picker.
+- **Device Responsive Settings**: Optimize gallery layouts separately for desktop, tablet, and mobile devices.
+- **Lightweight Gutenberg Block**: Built for the block editor with clean code for fast loading and smooth performance.
 
+=== Image Gallery Block Pro – Unlock Advanced Gallery Layouts ===
+The [Pro version](https://bplugins.com/products/3d-image-gallery/) adds advanced layouts, enhanced design controls, and interactive gallery experiences for creating modern and visually engaging WordPress image galleries.
+
+== What’s Included in the Pro Version? ==
+
+- **Advanced Gallery Layouts**: Create beautiful gallery designs including Masonry, Dynamic Motion, 3D Parallax, and Hexagonal layouts.
+- **Interactive 3D Slider Galleries**: Display images in engaging 3D slider galleries with navigation controls.
+- **Drag-and-Drop Image Sorting**: Organize gallery images easily using sortable drag-and-drop controls.
+- **Custom Overlay Effects**: Design stylish hover overlays with adjustable colors, margins, and padding.
+- **Card Design Customization**: Control card borders, radius, widths, and layout appearance.
+- **Button & Element Positioning**: Adjust button placement and alignment for better gallery interaction.
+- **Global Container Controls**: Customize gallery containers with advanced background, margin, and padding settings.
+- **Enhanced Design Flexibility**: Fine-tune every element of your gallery for a fully customized look.
+
+[Try the Image Gallery Block](https://bplugins.com/products/3d-image-gallery/pricing/) – Unlock all premium features now!
+
+=== How to Use Image Gallery Block – Step-by-Step Guide ===
+
+Getting started with the Image Gallery Block is quick and easy!
+
+== Step-by-Step Instructions ==
+1. Install and activate the Image Gallery Block plugin.
+2. Open the WordPress Gutenberg editor.
+3. Click the “+” block inserter.
+4. Search for Image Gallery and add the block.
+5. Upload images and customize the gallery layout from the block settings panel.
 
 * For installation help click on Installation Tab
 
+[Live Demo](https://bblockswp.com/demo/image-gallery-default/) | [Get Image Gallery Block PRO](https://bplugins.com/products/3d-image-gallery/pricing/)
 
-= Feedback =
+=== Feedback ===
 - Did you like this plugin? Dislike it? Do you have a feature request? [Please share your feedback with us](mailto:support@bplugins.com 'Send feedback')
 
 
@@ -132,6 +149,9 @@ Please report security bugs found in the source code of the Image Gallery block 
 
 == Changelog ==
 
+= 2.2.9 - 15 Mar 26 =
+* Fixed: Premium Overlay Issue
+
 = 2.2.8 - 05 Feb 26 =
 * Fixed: Product landing page link not working
 
@@ -188,6 +208,9 @@ Please report security bugs found in the source code of the Image Gallery block 
 
 
 == Upgrade Notice ==
+
+= 2.2.9 - 15 Mar 26 =
+* Fixed: Premium Overlay Issue
 
 = 2.2.7 - 26 Feb 26 =
 * Fixed: Freemius Lite SDK Security Vulnerability
