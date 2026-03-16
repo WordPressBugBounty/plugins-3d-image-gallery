@@ -1,7 +1,6 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "version": "2.1.4",
+  "version": "2.2.10",
   "name": "bigb/image-gallery",
   "title": "Image Gallery",
   "description": "Create and Display Photo Galleries",

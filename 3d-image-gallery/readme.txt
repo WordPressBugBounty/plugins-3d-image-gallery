@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com
 Tags: image gallery block, gallery block, photo gallery, image slider, masonry gallery
 Requires at least: 6.5
 Tested up to: 6.7
-Stable tag: 2.2.9
+Stable tag: 2.2.10
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org
@@ -148,6 +148,9 @@ Please report security bugs found in the source code of the Image Gallery block 
 
 
 == Changelog ==
+
+= 2.2.10 - 16 Mar 26 =
+* Added: Default Dashboard Color Scheme
 
 = 2.2.9 - 15 Mar 26 =
 * Fixed: Premium Overlay Issue
