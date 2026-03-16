@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Image Gallery - Block
  * Description: Create and Display Photo Galleries.
- * Version: 2.2.10
+ * Version: 2.2.11
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -15,22 +15,13 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
-// if (function_exists('ig_fs')) {
-// 	register_activation_hook(__FILE__, function () {
-// 		if (is_plugin_active('3d-image-gallery/index.php')) {
-// 			deactivate_plugins('3d-image-gallery/index.php');
-// 		}
-// 		if (is_plugin_active('3d-image-gallery-pro/index.php')) {
-// 			deactivate_plugins('3d-image-gallery-pro/index.php');
-// 		}
-// 	});
 
 // } else {
   if ( function_exists( 'ig_fs' ) ) {
         ig_fs()->set_basename( false, __FILE__ );
     } else {
 	// Constant
-	define('BIGB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.2.10');
+	define('BIGB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.2.11');
 	define('BIGB_DIR_URL', plugin_dir_url(__FILE__));
 	define('BIGB_DIR_PATH', plugin_dir_path(__FILE__));
 	define('BIGB_HAS_PRO', file_exists(BIGB_DIR_PATH . 'vendor/freemius/start.php'));

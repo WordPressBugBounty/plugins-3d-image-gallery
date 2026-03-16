@@ -37,5 +37,6 @@ if ($styleSl === 'styleSeven') {
 
 <div <?php echo get_block_wrapper_attributes(); ?> id="<?php echo esc_attr($id); ?>"
     data-attributes="<?php echo esc_attr($json_attributes); ?>"
-    data-pipecheck="<?php echo esc_attr(ig_IsPremium()); ?>">
+    data-pipecheck="<?php echo esc_attr(ig_IsPremium()); ?>"
+    data-pricing-url="<?php echo esc_url( admin_url( 'tools.php?page=3d-image-gallery-dashboard#/pricing' ) ); ?>">
 </div>
