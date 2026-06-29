@@ -2,13 +2,17 @@
 /**
  * Plugin Name: Image Gallery - Block
  * Description: Create and Display Photo Galleries.
- * Version: 2.2.11
+ * Version: 2.3.0
+ * Tested up to: 7.0
+ * Requires PHP: 7.4
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: image-gallery
-   */
+ * @fs_premium_only /vendor/freemius, /includes/fs.php
+ * @fs_free_only /vendor/freemius-lite, /includes/fs-lite.php
+ */
 
 // ABS PATH
 if (! defined('ABSPATH')) {
@@ -16,31 +20,19 @@ if (! defined('ABSPATH')) {
 }
 
 
-// } else {
   if ( function_exists( 'ig_fs' ) ) {
-        ig_fs()->set_basename( false, __FILE__ );
+        ig_fs()->set_basename( true, __FILE__ );
     } else {
 	// Constant
-	define('BIGB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.2.11');
+	define('BIGB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.3.0');
 	define('BIGB_DIR_URL', plugin_dir_url(__FILE__));
 	define('BIGB_DIR_PATH', plugin_dir_path(__FILE__));
-	define('BIGB_HAS_PRO', file_exists(BIGB_DIR_PATH . 'vendor/freemius/start.php'));
-
-
-	if ( BIGB_HAS_PRO ) {
-		require_once BIGB_DIR_PATH . 'includes/fs.php';
-	}else{
-		require_once BIGB_DIR_PATH . 'includes/fs-lite.php';
-	}
-
-	if(BIGB_HAS_PRO){
-		require_once BIGB_DIR_PATH . 'includes/LicenseActivation.php';
-	}
-
+	// Freemius Lite SDK bootstrap.
+	require_once BIGB_DIR_PATH . 'includes/fs-lite.php';
 
 	function ig_IsPremium()
 	{
-		return BIGB_HAS_PRO ? ig_fs()->can_use_premium_code() : false;
+		return false;
 	}
 
 
@@ -64,7 +56,7 @@ if (! defined('ABSPATH')) {
 
 		function defaultContent( $content, $post ) {
 			if ( 'page' === $post->post_type && isset( $_GET['content'] ) ) {
-				return wp_unslash( $_GET['content'] );
+				return wp_kses_post( wp_unslash( $_GET['content'] ) );
 			}
 			return $content;
 		}
@@ -88,35 +80,11 @@ if (! defined('ABSPATH')) {
 					true
 				);
 			}
-
-			// Swiper View
-			if (file_exists($build_path . 'view-swiper.asset.php')) {
-				$asset_file = include $build_path . 'view-swiper.asset.php';
-				wp_register_script(
-					'bigb-image-gallery-view-swiper',
-					$build_url . 'view-swiper.js',
-					$asset_file['dependencies'],
-					$asset_file['version'],
-					true
-				);
-			}
-
-			// GSAP View
-			if (file_exists($build_path . 'view-gsap.asset.php')) {
-				$asset_file = include $build_path . 'view-gsap.asset.php';
-				wp_register_script(
-					'bigb-image-gallery-view-gsap',
-					$build_url . 'view-gsap.js',
-					$asset_file['dependencies'],
-					$asset_file['version'],
-					true
-				);
-			}
 		}
 
 		function igbEnqueueBlockEditorAssets()
 		{
-			wp_add_inline_script('bigb-image-gallery-editor-script', 'const igbpipecheck =  ' . wp_json_encode(ig_IsPremium()) . ';', 'before');
+			wp_add_inline_script('bigb-image-gallery-editor-script', 'const igbpipecheck = false;', 'before');
 		}
 	}
 

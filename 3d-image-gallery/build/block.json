@@ -1,21 +1,28 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "version": "2.2.11",
+  "version": "2.3.0",
   "name": "bigb/image-gallery",
   "title": "Image Gallery",
-  "description": "Create and Display Photo Galleries",
+  "description": "Create responsive image galleries, masonry layouts, lightboxes, and 3D image sliders.",
   "category": "widgets",
   "keywords": [
     "gallery",
     "image gallery",
-    "image slider"
+    "photo gallery",
+    "masonry",
+    "lightbox",
+    "grid",
+    "portfolio",
+    "album",
+    "slider",
+    "3d gallery",
+    "responsive gallery"
   ],
   "textdomain": "image-gallery",
   "attributes": {
     "align": {
       "type": "string",
-      "default": "full"
+      "default": "wide"
     },
     "cId": {
       "type": "string",

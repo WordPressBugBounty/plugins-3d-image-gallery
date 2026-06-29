@@ -15,28 +15,10 @@ if (false === $json_attributes) {
     $json_attributes = '{}';
 }
 
-$styleSl = isset($attributes['styleSl']) ? $attributes['styleSl'] : 'styleDefault';
-
-// Enqueue assets based on style
-if ($styleSl === 'styleSeven') {
-    wp_enqueue_script('bigb-image-gallery-view-swiper');
-    if (file_exists(plugin_dir_path(__DIR__) . 'build/view-swiper.css')) {
-        wp_enqueue_style('bigb-image-gallery-view-swiper-style', plugin_dir_url(__DIR__) . 'build/view-swiper.css', [], '1.0.0');
-    }
-} elseif ($styleSl === 'styleFive') {
-    wp_enqueue_script('bigb-image-gallery-view-gsap');
-    if (file_exists(plugin_dir_path(__DIR__) . 'build/view-gsap.css')) {
-        wp_enqueue_style('bigb-image-gallery-view-gsap-style', plugin_dir_url(__DIR__) . 'build/view-gsap.css', [], '1.0.0');
-    }
-} else {
-    wp_enqueue_script('bigb-image-gallery-view');
-    // view.css is likely loaded by block.json, but if we want to be explicit or if we remove it from block.json:
-    // wp_enqueue_style('bigb-image-gallery-view-style', plugin_dir_url(__DIR__) . 'build/view.css', [], '1.0.0');
-}
+// Enqueue frontend assets
+wp_enqueue_script('bigb-image-gallery-view');
 ?>
 
 <div <?php echo get_block_wrapper_attributes(); ?> id="<?php echo esc_attr($id); ?>"
-    data-attributes="<?php echo esc_attr($json_attributes); ?>"
-    data-pipecheck="<?php echo esc_attr(ig_IsPremium()); ?>"
-    data-pricing-url="<?php echo esc_url( admin_url( 'tools.php?page=3d-image-gallery-dashboard#/pricing' ) ); ?>">
+    data-attributes="<?php echo esc_attr($json_attributes); ?>">
 </div>
