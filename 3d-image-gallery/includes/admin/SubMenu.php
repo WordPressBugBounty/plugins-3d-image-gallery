@@ -7,13 +7,39 @@ class igbSubMenu {
 		add_action( 'admin_menu', [ $this, 'adminMenu' ] );
 		add_action('admin_enqueue_scripts', [$this, 'adminEnqueueScripts']);
 		add_action( 'wp_ajax_igbSaveUninstallOption', [ $this, 'handleUninstallOption' ] );
+		add_action( 'admin_head', [ $this, 'highlightHelpDemoMenu' ] );
 	}
 
+	/**
+	 * Color the "Help & Demos" submenu link so it stands out in the sidebar --
+	 * the same treatment b-testimonials-block gives its own "Demo & Help" entry.
+	 * One inline <style> since the sidebar persists across every admin screen.
+	 */
+	function highlightHelpDemoMenu() { ?>
+		<style>
+			#adminmenu a[href*="page=3d-image-gallery-dashboard"],
+			#adminmenu a[href*="page=3d-image-gallery-dashboard"] *,
+			#adminmenu a[href*="page=3d-image-gallery-dashboard"]:hover,
+			#adminmenu a[href*="page=3d-image-gallery-dashboard"]:hover *,
+			#adminmenu a[href*="page=3d-image-gallery-dashboard"]:focus,
+			#adminmenu a[href*="page=3d-image-gallery-dashboard"]:focus *,
+			#adminmenu li.current a[href*="page=3d-image-gallery-dashboard"],
+			#adminmenu li.current a[href*="page=3d-image-gallery-dashboard"] * {
+				color: #f18500 !important;
+			}
+		</style>
+	<?php }
+
 	function adminMenu(){
+		// Under the Image Gallery post type's own menu, the way every sibling
+		// plugin with a CPT does it (Video Gallery, Image Viewer, Chart) --
+		// rather than Tools, which is where this lived before the post type
+		// existed. A top-level "Image Gallery" menu with a submenu also called
+		// "Image Gallery" would read as a duplicate, hence "Help & Demos".
 		add_submenu_page(
-			'tools.php',
-			__('Image Gallery', 'image-gallery'),
-			__('Image Gallery', 'image-gallery'),
+			'edit.php?post_type=' . igbPostType::POST_TYPE,
+			__('Help - bPlugins', 'image-gallery'),
+			__('Help & Demos', 'image-gallery'),
 			'manage_options',
 			'3d-image-gallery-dashboard',
             [$this, 'renderDashboard'],
@@ -59,7 +85,10 @@ class igbSubMenu {
 
     function adminEnqueueScripts($hook)
     {
-        if ('tools_page_3d-image-gallery-dashboard' === $hook) {
+        // The hook suffix follows the new parent: {post_type}_page_{slug}
+        // rather than tools_page_{slug} -- see video-gallery-block-free's
+        // Enqueue.php for the same shape against its own post type.
+        if (igbPostType::POST_TYPE . '_page_3d-image-gallery-dashboard' === $hook) {
             wp_enqueue_style('ig-admin-style', BIGB_DIR_URL . 'build/admin/dashboard.css', false, BIGB_PLUGIN_VERSION);
             wp_enqueue_script('ig-admin-script', BIGB_DIR_URL . 'build/admin/dashboard.js', ['react', 'react-dom', 'wp-data', "wp-api", "wp-util", "wp-i18n"], BIGB_PLUGIN_VERSION, true);
 

@@ -1,6 +1,6 @@
 {
   "apiVersion": 2,
-  "version": "2.3.0",
+  "version": "2.4.0",
   "name": "bigb/image-gallery",
   "title": "Image Gallery",
   "description": "Create responsive image galleries, masonry layouts, lightboxes, and 3D image sliders.",
@@ -163,6 +163,118 @@
     "styleSl": {
       "type": "string",
       "default": "styleDefault"
+    },
+    "albums": {
+      "type": "array",
+      "default": []
+    },
+    "filter": {
+      "type": "object",
+      "default": {
+        "display": false,
+        "allText": "All",
+        "align": "center",
+        "margin": {
+          "bottom": "25px"
+        }
+      }
+    },
+    "filterBtnColors": {
+      "type": "object",
+      "default": {
+        "color": "#444444",
+        "bg": "#f0f2f5"
+      }
+    },
+    "filterBtnActiveColors": {
+      "type": "object",
+      "default": {
+        "color": "#ffffff",
+        "bg": "#146ef5"
+      }
+    },
+    "filterBtnTypo": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 14,
+          "tablet": 14,
+          "mobile": 14
+        }
+      }
+    },
+    "watermark": {
+      "type": "object",
+      "default": {
+        "enable": false,
+        "type": "text",
+        "text": "",
+        "image": "",
+        "position": "bottom-right",
+        "opacity": 0.7,
+        "fontSize": 14,
+        "color": "#ffffff",
+        "applyOn": "both"
+      }
+    },
+    "disableRightClick": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableLightbox": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableLoadMore": {
+      "type": "boolean",
+      "default": false
+    },
+    "imagesPerLoad": {
+      "type": "number",
+      "default": 10
+    },
+    "loadMoreBtnText": {
+      "type": "string",
+      "default": "Load More"
+    },
+    "loadMoreBtnColors": {
+      "type": "object",
+      "default": {
+        "color": "#ffffff",
+        "bgType": "solid",
+        "bg": "#146ef5"
+      }
+    },
+    "loadMoreBtnTypo": {
+      "type": "object",
+      "default": {
+        "fontSize": 16,
+        "borderRadius": 4
+      }
+    },
+    "aspectRatio": {
+      "type": "string",
+      "default": "original"
+    },
+    "objectFit": {
+      "type": "string",
+      "default": "cover"
+    },
+    "showLightboxCounter": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLightboxFullscreen": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLightboxDownload": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLightboxShare": {
+      "type": "boolean",
+      "default": true
     }
   },
   "supports": {
@@ -173,13 +285,76 @@
     "html": false
   },
   "example": {
+    "viewportWidth": 1000,
     "attributes": {
-      "preview": true,
+      "styleSl": "styleDefault",
       "columns": {
-        "desktop": 1,
-        "tablet": 1,
+        "desktop": 3,
+        "tablet": 2,
         "mobile": 1
-      }
+      },
+      "itemHeight": "300px",
+      "columnGap": "20px",
+      "background": {
+        "type": "solid",
+        "color": "transparent"
+      },
+      "gallery": [
+        {
+          "id": 1,
+          "title": "Coastline",
+          "subtitle": "18 photographs",
+          "images": [
+            "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='1200' height='800' fill='%23f2c894'/%3E%3Ccircle cx='940' cy='190' r='92' fill='%23f0876a'/%3E%3Cpath d='M0 800 L430 300 L820 800 Z' fill='%23a97d78'/%3E%3Cpath d='M480 800 L900 380 L1200 800 Z' fill='%237d5a63'/%3E%3C/svg%3E"
+          ],
+          "colors": {
+            "color": "#fff",
+            "bgType": "solid",
+            "bg": "#505a64d9"
+          },
+          "btnColors": {
+            "color": "#fff",
+            "bgType": "solid",
+            "bg": "#000a1480"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Highlands",
+          "subtitle": "24 photographs",
+          "images": [
+            "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='1200' height='800' fill='%23cfe3d2'/%3E%3Ccircle cx='940' cy='190' r='92' fill='%23f7f2d8'/%3E%3Cpath d='M0 800 L430 300 L820 800 Z' fill='%234b7a5c'/%3E%3Cpath d='M480 800 L900 380 L1200 800 Z' fill='%232f5741'/%3E%3C/svg%3E"
+          ],
+          "colors": {
+            "color": "#fff",
+            "bgType": "solid",
+            "bg": "#505a64d9"
+          },
+          "btnColors": {
+            "color": "#fff",
+            "bgType": "solid",
+            "bg": "#000a1480"
+          }
+        },
+        {
+          "id": 3,
+          "title": "After dark",
+          "subtitle": "11 photographs",
+          "images": [
+            "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='1200' height='800' fill='%231a2138'/%3E%3Ccircle cx='940' cy='190' r='92' fill='%23c7d4f0'/%3E%3Cpath d='M0 800 L430 300 L820 800 Z' fill='%23161d33'/%3E%3Cpath d='M480 800 L900 380 L1200 800 Z' fill='%230d1220'/%3E%3C/svg%3E"
+          ],
+          "colors": {
+            "color": "#fff",
+            "bgType": "solid",
+            "bg": "#505a64d9"
+          },
+          "btnColors": {
+            "color": "#fff",
+            "bgType": "solid",
+            "bg": "#000a1480"
+          }
+        }
+      ]
     }
   },
   "editorScript": [

@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Image Gallery - Block
- * Description: Create and Display Photo Galleries.
- * Version: 2.3.0
- * Tested up to: 7.0
+ * Plugin Name: Image Gallery Block
+ * Description: Create and display photo gallery/photo album
+ * Version: 2.4.0
+ * Tested up to: 7.1
  * Requires PHP: 7.4
  * Author: bPlugins
  * Author URI: https://bplugins.com
@@ -19,31 +19,70 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
-
-  if ( function_exists( 'ig_fs' ) ) {
-        ig_fs()->set_basename( true, __FILE__ );
-    } else {
+if ( function_exists( 'ig_fs' ) ) {
+    ig_fs()->set_basename( true, __FILE__ );
+} else {
 	// Constant
-	define('BIGB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.3.0');
-	define('BIGB_DIR_URL', plugin_dir_url(__FILE__));
-	define('BIGB_DIR_PATH', plugin_dir_path(__FILE__));
+    define('BIGB_PLUGIN_VERSION', (
+        isset($_SERVER['HTTP_HOST'])
+        && 'localhost' === strtok(sanitize_text_field(wp_unslash($_SERVER['HTTP_HOST'])), ':')
+    ) ? time() : '2.4.0');
+    define('BIGB_DIR_URL', plugin_dir_url(__FILE__));
+    define('BIGB_DIR_PATH', plugin_dir_path(__FILE__));
 	// Freemius Lite SDK bootstrap.
 	require_once BIGB_DIR_PATH . 'includes/fs-lite.php';
-
-	function ig_IsPremium()
-	{
-		return false;
-	}
-
 
 	class BIGBImageGallery
 	{
 		function __construct()
 		{
 			add_action('init', [$this, 'onInit']);
-			add_action('enqueue_block_editor_assets', [$this, 'igbEnqueueBlockEditorAssets']);
 			add_filter( 'default_title', [$this, 'defaultTitle'], 10, 2 );
 			add_filter( 'default_content', [$this, 'defaultContent'], 10, 2 );
+			add_filter( 'block_type_metadata', [ $this, 'versionBlockAssets' ] );
+
+			// Redirect to the Help & Demos page on first activation.
+			register_activation_hook( __FILE__, [ $this, 'onActivation' ] );
+			add_action( 'admin_init', [ $this, 'maybeRedirectAfterActivation' ] );
+		}
+
+		/**
+		 * Set a flag so we know a redirect is needed on the next admin page load.
+		 */
+		function onActivation() {
+			update_option( 'bigb_activation_redirect', true );
+		}
+
+		/**
+		 * Redirect to the Help & Demos dashboard page once after activation.
+		 */
+		function maybeRedirectAfterActivation() {
+			if ( ! get_option( 'bigb_activation_redirect', false ) ) {
+				return;
+			}
+
+			delete_option( 'bigb_activation_redirect' );
+
+			// Don't redirect on bulk activate or WP-CLI.
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$activate_multi = isset( $_GET['activate-multi'] ) ? sanitize_text_field( wp_unslash( $_GET['activate-multi'] ) ) : '';
+			if ( wp_doing_ajax() || ( defined( 'WP_CLI' ) && WP_CLI ) || ! empty( $activate_multi ) ) {
+				return;
+			}
+
+			wp_safe_redirect( admin_url( 'edit.php?post_type=image-gallery&page=3d-image-gallery-dashboard' ) );
+			exit;
+		}
+
+		// block.json's own "version" is what register_block_style_handle()
+		// falls back to for cache-busting once SCRIPT_DEBUG is off (the
+		// normal state on a real site), so keep it pinned to the plugin's
+		// actual version rather than whatever was last hand-edited there.
+		function versionBlockAssets( $metadata ) {
+			if ( isset( $metadata['name'] ) && 0 === strpos( $metadata['name'], 'bigb/' ) ) {
+				$metadata['version'] = BIGB_PLUGIN_VERSION;
+			}
+			return $metadata;
 		}
 
 
@@ -81,16 +120,16 @@ if (! defined('ABSPATH')) {
 				);
 			}
 		}
-
-		function igbEnqueueBlockEditorAssets()
-		{
-			wp_add_inline_script('bigb-image-gallery-editor-script', 'const igbpipecheck = false;', 'before');
-		}
 	}
 
 	new BIGBImageGallery();
 
 }
 
+require_once BIGB_DIR_PATH . '/includes/PostType.php';
+require_once BIGB_DIR_PATH . '/includes/BlockEditor.php';
 require_once BIGB_DIR_PATH . '/includes/admin/SubMenu.php';
 require_once BIGB_DIR_PATH . '/includes/attribute-migration.php';
+
+// Ready-made sections for the inserter.
+require_once BIGB_DIR_PATH . '/includes/patterns.php';
