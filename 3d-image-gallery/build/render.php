@@ -23,7 +23,7 @@ if (false === $json_attributes) {
 wp_enqueue_script('bigb-image-gallery-view');
 ?>
 
-<div <?php echo get_block_wrapper_attributes(); ?> id="<?php echo esc_attr($id); ?>"
+<div <?php echo get_block_wrapper_attributes(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped by get_block_wrapper_attributes(). ?> id="<?php echo esc_attr($id); ?>"
     data-attributes="<?php echo esc_attr($json_attributes); ?>">
 </div>
 <?php

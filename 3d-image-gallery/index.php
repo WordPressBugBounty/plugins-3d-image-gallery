@@ -2,9 +2,9 @@
 /**
  * Plugin Name: Image Gallery Block
  * Description: Create and display photo gallery/photo album
- * Version: 2.4.0
- * Tested up to: 7.1
+ * Version: 2.4.1
  * Requires PHP: 7.4
+ * Requires at least: 6.5
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -26,7 +26,7 @@ if ( function_exists( 'ig_fs' ) ) {
     define('BIGB_PLUGIN_VERSION', (
         isset($_SERVER['HTTP_HOST'])
         && 'localhost' === strtok(sanitize_text_field(wp_unslash($_SERVER['HTTP_HOST'])), ':')
-    ) ? time() : '2.4.0');
+    ) ? time() : '2.4.1');
     define('BIGB_DIR_URL', plugin_dir_url(__FILE__));
     define('BIGB_DIR_PATH', plugin_dir_path(__FILE__));
 	// Freemius Lite SDK bootstrap.
@@ -70,6 +70,12 @@ if ( function_exists( 'ig_fs' ) ) {
 				return;
 			}
 
+			// The Freemius opt-in screen hides this plugin's menu until it is answered, so the page below
+			// would say "not allowed". Let Freemius show its opt-in first; it opens the first page after.
+			if ( function_exists( 'ig_fs' ) && ig_fs()->is_activation_mode() ) {
+				return;
+			}
+
 			wp_safe_redirect( admin_url( 'edit.php?post_type=image-gallery&page=3d-image-gallery-dashboard' ) );
 			exit;
 		}
@@ -87,15 +93,17 @@ if ( function_exists( 'ig_fs' ) ) {
 
 
 		function defaultTitle( $title, $post ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only prefill of a new, unsaved page; nothing is stored until the user saves.
 			if ( 'page' === $post->post_type && isset( $_GET['title'] ) ) {
-				return sanitize_text_field( wp_unslash( $_GET['title'] ) );
+				return sanitize_text_field( wp_unslash( $_GET['title'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			}
 			return $title;
 		}
 
 		function defaultContent( $content, $post ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only prefill of a new, unsaved page; nothing is stored until the user saves.
 			if ( 'page' === $post->post_type && isset( $_GET['content'] ) ) {
-				return wp_kses_post( wp_unslash( $_GET['content'] ) );
+				return wp_kses_post( wp_unslash( $_GET['content'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			}
 			return $content;
 		}

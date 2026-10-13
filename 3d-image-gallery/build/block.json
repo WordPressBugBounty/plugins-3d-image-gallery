@@ -1,6 +1,6 @@
 {
   "apiVersion": 2,
-  "version": "2.4.0",
+  "version": "2.4.1",
   "name": "bigb/image-gallery",
   "title": "Image Gallery",
   "description": "Create responsive image galleries, masonry layouts, lightboxes, and 3D image sliders.",

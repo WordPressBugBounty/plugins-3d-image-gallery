@@ -2,7 +2,7 @@
 Contributors: bplugins, himur98, abuhayat, freemius
 Tags: gallery, image gallery, photo gallery, masonry gallery, lightbox
 Tested up to: 7.1
-Stable tag: 2.4.0
+Stable tag: 2.4.1
 Requires PHP: 7.4
 Requires at least: 6.5
 Donate link: https://www.buymeacoffee.com/abuhayat
@@ -256,6 +256,12 @@ As the external service functionality is handled by bpl-tools as a third-party l
 
 == Changelog ==
 
+= 2.4.1 - 13 October 2026 =
+* Update: Freemius SDK updated to 2.13.5.
+* Fix: After activating the plugin, the page no longer says you are not allowed to access it. The Freemius opt-in now opens first, then the first page of the plugin.
+* Fix: The Freemius opt-in for Image Gallery now opens its own dashboard instead of an error page.
+* Fix: Code checked with the WordPress.org Plugin Check. Output escaping and form data notes are cleaned up.
+
 = 2.4.0 - 20 September 2026 =
 * New (Pro): Media Highlights — Facebook-style story albums that group your photos and videos into swipeable, autoplay stories with a full-screen story viewer. Available in the Pro version.
 * **New — reusable galleries and a shortcode.** There is now an **Image Gallery** post type: build a gallery once, publish it, and place it with `[image_gallery id=123]` anywhere a shortcode works — a widget, a page-builder row, a theme template, or six different pages at once. Edit the gallery and every copy updates. The list table has a **Shortcode** column you click to copy. Putting the block straight into a page works exactly as before.
@@ -283,6 +289,8 @@ As the external service functionality is handled by bpl-tools as a third-party l
 * Fixed: block asset caching now uses the plugin's real version instead of a static fallback, so gallery styles update immediately after a plugin update instead of waiting on a stale browser cache.
 * New: activating the plugin now takes you straight to the Help & Demos page, so onboarding starts immediately instead of leaving you on the plugins list.
 * Fixed: an update package built with the wrong internal name could install as a separate copy of the plugin instead of replacing the existing one, which then showed as "Plugin could not be activated because it triggered a fatal error." Update packages are now always named to match.
+* Improved: the Help & Demos link in the admin sidebar is now highlighted, so it is easier to spot.
+* Improved: cards on the Demos page now show a soft tint of their category color at rest, not only on hover, so related demos are easier to tell apart at a glance.
 
 = 2.3.0 - 30 Jun 26 =
 * Added: New Admin Dashboard UI with improved layout and user experience.

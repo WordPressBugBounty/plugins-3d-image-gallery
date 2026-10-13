@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Image Gallery Block icon — a masonry photo grid lit by a sweeping highlight">
+  <title>Image Gallery Block — masonry grid</title>
+  <defs>
+    <linearGradient id="gibTile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#146ef5"/>
+      <stop offset="1" stop-color="#0a3d8f"/>
+    </linearGradient>
+    <linearGradient id="gibSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fc3ff"/>
+      <stop offset="1" stop-color="#dceeff"/>
+    </linearGradient>
+    <linearGradient id="gibDusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd9a8"/>
+      <stop offset="1" stop-color="#ffefda"/>
+    </linearGradient>
+    <linearGradient id="gibMint" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a7e8d2"/>
+      <stop offset="1" stop-color="#dcf6ec"/>
+    </linearGradient>
+    <linearGradient id="gibSun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb35c"/>
+      <stop offset="1" stop-color="#ff7a00"/>
+    </linearGradient>
+    <linearGradient id="gibBeam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="gibClip"><rect x="0" y="0" width="256" height="256" rx="56"/></clipPath>
+    <clipPath id="gibGrid">
+      <rect x="40"  y="48"  width="48" height="72" rx="8"/>
+      <rect x="40"  y="128" width="48" height="80" rx="8"/>
+      <rect x="96"  y="48"  width="48" height="96" rx="8"/>
+      <rect x="96"  y="152" width="48" height="56" rx="8"/>
+      <rect x="152" y="48"  width="48" height="56" rx="8"/>
+      <rect x="152" y="112" width="48" height="96" rx="8"/>
+    </clipPath>
+    <style>
+      :root { --gib: 3.6s; }
+      .gibBeam { animation: gibBeam var(--gib) linear infinite; transform-box: fill-box; transform-origin: 50% 50%; }
+      @keyframes gibBeam {
+        0%   { transform: translateX(-180px); }
+        100% { transform: translateX(300px); }
+      }
+      .gibSun { animation: gibSun var(--gib) ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 50%; }
+      @keyframes gibSun {
+        0%, 100% { transform: scale(1);    opacity: 1; }
+        50%      { transform: scale(1.18); opacity: .85; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gibBeam, .gibSun { animation: none; }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#gibClip)">
+    <rect x="0" y="0" width="256" height="256" fill="url(#gibTile)"/>
+    <circle cx="40" cy="26" r="128" fill="#ffffff" opacity="0.08"/>
+
+    <!-- cell 1: blue sky + sun + mountain -->
+    <g>
+      <rect x="40" y="48" width="48" height="72" rx="8" fill="#ffffff"/>
+      <g clip-path="url(#gibGrid)">
+        <rect x="44" y="52" width="40" height="64" rx="5" fill="url(#gibSky)"/>
+        <circle class="gibSun" cx="73" cy="66" r="7" fill="url(#gibSun)"/>
+        <path d="M44 116 L58 88 L68 100 L76 90 L84 116 Z" fill="#2f6bb5"/>
+      </g>
+    </g>
+    <!-- cell 2: dusk dunes -->
+    <g>
+      <rect x="40" y="128" width="48" height="80" rx="8" fill="#ffffff"/>
+      <g clip-path="url(#gibGrid)">
+        <rect x="44" y="132" width="40" height="72" rx="5" fill="url(#gibDusk)"/>
+        <circle cx="56" cy="150" r="8" fill="url(#gibSun)"/>
+        <path d="M44 204 C58 182 72 190 84 176 L84 204 Z" fill="#d97a2a"/>
+      </g>
+    </g>
+    <!-- cell 3: teal hills -->
+    <g>
+      <rect x="96" y="48" width="48" height="96" rx="8" fill="#ffffff"/>
+      <g clip-path="url(#gibGrid)">
+        <rect x="100" y="52" width="40" height="88" rx="5" fill="url(#gibMint)"/>
+        <path d="M100 140 L114 108 L124 122 L134 104 L140 140 Z" fill="#3f9f7a"/>
+        <path d="M100 140 L120 122 L140 138 L140 140 Z" fill="#2f7d5f"/>
+      </g>
+    </g>
+    <!-- cell 4: sky + sun -->
+    <g>
+      <rect x="96" y="152" width="48" height="56" rx="8" fill="#ffffff"/>
+      <g clip-path="url(#gibGrid)">
+        <rect x="100" y="156" width="40" height="48" rx="5" fill="url(#gibSky)"/>
+        <circle class="gibSun" cx="128" cy="172" r="6" fill="url(#gibSun)"/>
+        <path d="M100 204 L112 186 L124 198 L132 190 L140 204 Z" fill="#2f6bb5"/>
+      </g>
+    </g>
+    <!-- cell 5: dusk -->
+    <g>
+      <rect x="152" y="48" width="48" height="56" rx="8" fill="#ffffff"/>
+      <g clip-path="url(#gibGrid)">
+        <rect x="156" y="52" width="40" height="48" rx="5" fill="url(#gibDusk)"/>
+        <circle cx="182" cy="66" r="7" fill="url(#gibSun)"/>
+        <path d="M156 100 C170 82 182 92 196 80 L196 100 Z" fill="#d97a2a"/>
+      </g>
+    </g>
+    <!-- cell 6: mountains -->
+    <g>
+      <rect x="152" y="112" width="48" height="96" rx="8" fill="#ffffff"/>
+      <g clip-path="url(#gibGrid)">
+        <rect x="156" y="116" width="40" height="88" rx="5" fill="url(#gibSky)"/>
+        <circle class="gibSun" cx="186" cy="132" r="6" fill="url(#gibSun)"/>
+        <path d="M156 204 L172 160 L184 178 L192 168 L196 204 Z" fill="#2f6bb5"/>
+      </g>
+    </g>
+
+    <!-- sweeping highlight, clipped to the photo cells -->
+    <g clip-path="url(#gibGrid)">
+      <g class="gibBeam">
+        <rect x="88" y="20" width="70" height="280" fill="url(#gibBeam)" transform="rotate(16 128 128)"/>
+      </g>
+    </g>
+  </g>
+</svg>

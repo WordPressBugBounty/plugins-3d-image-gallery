@@ -8,7 +8,7 @@ if ( !defined( 'ABSPATH' ) ) { exit; }
             if (!isset($ig_fs)) {
                 require_once BIGB_DIR_PATH . 'vendor/freemius-lite/start.php';
 
-                $ig_fs = fs_lite_dynamic_init([
+                $ig_fs = fs_dynamic_init([
                     'id'                  => '19835',
 					'slug'                => '3d-image-gallery',
                     '__FILE__'            => BIGB_DIR_PATH . 'index.php',
@@ -22,10 +22,10 @@ if ( !defined( 'ABSPATH' ) ) { exit; }
 					'has_paid_plans'      => true,
 					'menu'                => array(
 						'slug'           => '3d-image-gallery-dashboard',
-						'first-path'     => 'tools.php?page=3d-image-gallery-dashboard',
+						'first-path'     => 'edit.php?post_type=image-gallery&page=3d-image-gallery-dashboard',
 						'support'        => false,
 						'parent'         => array(
-							'slug' => 'tools.php',
+							'slug' => 'edit.php?post_type=image-gallery',
 						),
 					),
                 ]); 
@@ -34,5 +34,10 @@ if ( !defined( 'ABSPATH' ) ) { exit; }
         }
 
         ig_fs();
+        // Show this plugin's own icon on the Freemius opt-in screen. Without it the SDK
+        // looks inside its own folder and falls back to a grey plug.
+        ig_fs()->add_filter( 'plugin_icon', function () {
+            return wp_normalize_path( BIGB_DIR_PATH . 'assets/icon.svg' );
+        } );
         do_action('ig_fs_loaded');
     }
