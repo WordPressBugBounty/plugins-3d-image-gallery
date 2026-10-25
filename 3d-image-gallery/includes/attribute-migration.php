@@ -8,6 +8,41 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
+if (!function_exists('ig_sanitize_link_attributes')) {
+    /**
+     * Recursively drops any non-http(s) "link" value from block attributes
+     * before they are JSON-encoded into data-attributes.
+     *
+     * Gallery/album items carry a free-form "link" field (set via the block's
+     * own link control, but also reachable unfiltered through the block's
+     * Code Editor), which the front end and editor both assign straight to
+     * window.location.href. wp_kses leaves a javascript: URI alone because
+     * it isn't markup, so without this it reaches the browser intact. This
+     * walks the whole attributes tree rather than special-casing one known
+     * path (e.g. gallery[].link), so every layout's "link" field is covered,
+     * including nested ones like imagesData.images[].link.
+     *
+     * @param mixed $value Attributes array, or a nested value while recursing.
+     * @return mixed Same shape, with unsafe "link" values removed.
+     */
+    function ig_sanitize_link_attributes($value) {
+        if (!is_array($value)) {
+            return $value;
+        }
+
+        foreach ($value as $key => $item) {
+            if ('link' === $key && is_string($item) && '' !== $item) {
+                $safe = esc_url_raw($item, ['http', 'https']);
+                $value[$key] = $safe !== '' ? $safe : '';
+            } elseif (is_array($item)) {
+                $value[$key] = ig_sanitize_link_attributes($item);
+            }
+        }
+
+        return $value;
+    }
+}
+
 if (!function_exists('ig_get_default_card_attributes')) {
     /**
      * Get default card attributes for styleOne

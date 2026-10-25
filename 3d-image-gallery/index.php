@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Image Gallery Block
  * Description: Create and display photo gallery/photo album
- * Version: 2.4.1
+ * Version: 2.4.2
  * Requires PHP: 7.4
  * Requires at least: 6.5
  * Author: bPlugins
@@ -26,7 +26,7 @@ if ( function_exists( 'ig_fs' ) ) {
     define('BIGB_PLUGIN_VERSION', (
         isset($_SERVER['HTTP_HOST'])
         && 'localhost' === strtok(sanitize_text_field(wp_unslash($_SERVER['HTTP_HOST'])), ':')
-    ) ? time() : '2.4.1');
+    ) ? time() : '2.4.2');
     define('BIGB_DIR_URL', plugin_dir_url(__FILE__));
     define('BIGB_DIR_PATH', plugin_dir_path(__FILE__));
 	// Freemius Lite SDK bootstrap.

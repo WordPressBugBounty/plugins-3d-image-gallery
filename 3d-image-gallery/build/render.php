@@ -12,6 +12,10 @@ $id       = 'bigbImageGallery-' . $clientId;
 // Migrate old blocks using centralized utility
 $attributes = ig_migrate_style_one_attributes( $attributes );
 
+// Drop any non-http(s) "link" value (e.g. a javascript: URI set via the
+// block's Code Editor) before it reaches the front end.
+$attributes = ig_sanitize_link_attributes( $attributes );
+
 $json_attributes = wp_json_encode($attributes);
 
 // Fallback in case wp_json_encode fails

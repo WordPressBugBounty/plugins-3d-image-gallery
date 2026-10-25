@@ -2,7 +2,7 @@
 Contributors: bplugins, himur98, abuhayat, freemius
 Tags: gallery, image gallery, photo gallery, masonry gallery, lightbox
 Tested up to: 7.1
-Stable tag: 2.4.1
+Stable tag: 2.4.2
 Requires PHP: 7.4
 Requires at least: 6.5
 Donate link: https://www.buymeacoffee.com/abuhayat
@@ -255,6 +255,9 @@ As the external service functionality is handled by bpl-tools as a third-party l
 * Privacy Policy: https://freemius.com/privacy/
 
 == Changelog ==
+
+= 2.4.2 - 25 October 2026 =
+* Security: Fixed stored XSS through javascript: gallery item links.
 
 = 2.4.1 - 13 October 2026 =
 * Update: Freemius SDK updated to 2.13.5.
