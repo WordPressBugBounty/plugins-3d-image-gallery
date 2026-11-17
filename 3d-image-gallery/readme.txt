@@ -2,7 +2,7 @@
 Contributors: bplugins, himur98, abuhayat, freemius
 Tags: gallery, image gallery, photo gallery, masonry gallery, lightbox
 Tested up to: 7.1
-Stable tag: 2.4.2
+Stable tag: 2.4.3
 Requires PHP: 7.4
 Requires at least: 6.5
 Donate link: https://www.buymeacoffee.com/abuhayat
@@ -255,6 +255,12 @@ As the external service functionality is handled by bpl-tools as a third-party l
 * Privacy Policy: https://freemius.com/privacy/
 
 == Changelog ==
+
+= 2.4.3 - 17 November 2026 =
+* Improvement: Optimized gallery image loading with responsive image attributes (srcset and sizes) for faster page rendering.
+* Tweak: Enhanced block attribute migration and backward compatibility across gallery styles.
+* Fix: Improved gallery item settings panel and layout controls in the block editor.
+* Security: Further hardened gallery item link handling so only http(s) URLs are followed.
 
 = 2.4.2 - 25 October 2026 =
 * Security: Fixed stored XSS through javascript: gallery item links.

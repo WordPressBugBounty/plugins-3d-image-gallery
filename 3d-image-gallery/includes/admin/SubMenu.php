@@ -17,14 +17,14 @@ class igbSubMenu {
 	 */
 	function highlightHelpDemoMenu() { ?>
 		<style>
-			#adminmenu a[href*="page=3d-image-gallery-dashboard"],
-			#adminmenu a[href*="page=3d-image-gallery-dashboard"] *,
-			#adminmenu a[href*="page=3d-image-gallery-dashboard"]:hover,
-			#adminmenu a[href*="page=3d-image-gallery-dashboard"]:hover *,
-			#adminmenu a[href*="page=3d-image-gallery-dashboard"]:focus,
-			#adminmenu a[href*="page=3d-image-gallery-dashboard"]:focus *,
-			#adminmenu li.current a[href*="page=3d-image-gallery-dashboard"],
-			#adminmenu li.current a[href*="page=3d-image-gallery-dashboard"] * {
+			#adminmenu a[href$="page=3d-image-gallery-dashboard"],
+			#adminmenu a[href$="page=3d-image-gallery-dashboard"] *,
+			#adminmenu a[href$="page=3d-image-gallery-dashboard"]:hover,
+			#adminmenu a[href$="page=3d-image-gallery-dashboard"]:hover *,
+			#adminmenu a[href$="page=3d-image-gallery-dashboard"]:focus,
+			#adminmenu a[href$="page=3d-image-gallery-dashboard"]:focus *,
+			#adminmenu li.current a[href$="page=3d-image-gallery-dashboard"],
+			#adminmenu li.current a[href$="page=3d-image-gallery-dashboard"] * {
 				color: #f18500 !important;
 			}
 		</style>

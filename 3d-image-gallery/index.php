@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Image Gallery Block
  * Description: Create and display photo gallery/photo album
- * Version: 2.4.2
+ * Version: 2.4.3
  * Requires PHP: 7.4
  * Requires at least: 6.5
  * Author: bPlugins
@@ -26,7 +26,7 @@ if ( function_exists( 'ig_fs' ) ) {
     define('BIGB_PLUGIN_VERSION', (
         isset($_SERVER['HTTP_HOST'])
         && 'localhost' === strtok(sanitize_text_field(wp_unslash($_SERVER['HTTP_HOST'])), ':')
-    ) ? time() : '2.4.2');
+    ) ? time() : '2.4.3');
     define('BIGB_DIR_URL', plugin_dir_url(__FILE__));
     define('BIGB_DIR_PATH', plugin_dir_path(__FILE__));
 	// Freemius Lite SDK bootstrap.
@@ -138,6 +138,14 @@ require_once BIGB_DIR_PATH . '/includes/PostType.php';
 require_once BIGB_DIR_PATH . '/includes/BlockEditor.php';
 require_once BIGB_DIR_PATH . '/includes/admin/SubMenu.php';
 require_once BIGB_DIR_PATH . '/includes/attribute-migration.php';
+require_once BIGB_DIR_PATH . '/includes/AttachmentInfo.php';
+require_once BIGB_DIR_PATH . '/includes/responsive-images.php';
 
 // Ready-made sections for the inserter.
 require_once BIGB_DIR_PATH . '/includes/patterns.php';
+
+// One polite, dismissible review request (admins only, after a week).
+require_once BIGB_DIR_PATH . '/includes/review-notice.php';
+
+// BFCM promotional banner and action link.
+require_once BIGB_DIR_PATH . '/includes/bfcm-notice.php';

@@ -144,9 +144,11 @@ if (!function_exists('ig_get_seo_images')) {
                     ? (string) $item['description']
                     : $title;
                 $images[] = array(
-                    'url'     => $item['url'],
-                    'title'   => $title,
-                    'caption' => $caption,
+                    'url'        => $item['url'],
+                    'title'      => $title,
+                    'caption'    => $caption,
+                    'alt'        => isset($item['alt']) && is_string($item['alt']) ? $item['alt'] : '',
+                    'decorative' => !empty($item['decorative']),
                 );
             }
 
@@ -164,14 +166,19 @@ if (!function_exists('ig_get_seo_images')) {
             $caption  = trim($title . ('' !== $subtitle ? ' - ' . $subtitle : ''));
             $urls     = isset($card['images']) && is_array($card['images']) ? $card['images'] : array();
 
-            foreach ($urls as $url) {
+            $metas = isset($card['imageMeta']) && is_array($card['imageMeta']) ? $card['imageMeta'] : array();
+
+            foreach ($urls as $idx => $url) {
                 if (!is_string($url) || '' === $url) {
                     continue;
                 }
+                $meta     = isset($metas[$idx]) && is_array($metas[$idx]) ? $metas[$idx] : array();
                 $images[] = array(
-                    'url'     => $url,
-                    'title'   => '' !== $title ? $title : $caption,
-                    'caption' => $caption,
+                    'url'        => $url,
+                    'title'      => '' !== $title ? $title : $caption,
+                    'caption'    => $caption,
+                    'alt'        => isset($meta['alt']) && is_string($meta['alt']) ? $meta['alt'] : '',
+                    'decorative' => !empty($meta['decorative']),
                 );
             }
         }
@@ -199,7 +206,14 @@ if (!function_exists('ig_render_seo_fallback')) {
         // Visible-to-crawlers fallback for non-JS agents (social scrapers, Bing, etc.).
         echo '<noscript>';
         foreach ($images as $image) {
-            $alt = '' !== $image['title'] ? $image['title'] : $image['caption'];
+            // Decorative => empty alt; a written alt wins; else the title (previous behaviour).
+            if (!empty($image['decorative'])) {
+                $alt = '';
+            } elseif ('' !== trim((string) $image['alt'])) {
+                $alt = $image['alt'];
+            } else {
+                $alt = '' !== $image['title'] ? $image['title'] : $image['caption'];
+            }
             printf(
                 '<figure class="bigb-seo-image"><img src="%s" alt="%s" loading="lazy" />%s</figure>',
                 esc_url($image['url']),

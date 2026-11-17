@@ -22,6 +22,7 @@ if ( ! $igb_is_delete_data ) {
 // Delete plugin options.
 $igb_options_to_delete = array(
 	'igb_delete_data_on_uninstall',
+	'bigb_review_state',
 );
 
 foreach ( $igb_options_to_delete as $igb_option ) {

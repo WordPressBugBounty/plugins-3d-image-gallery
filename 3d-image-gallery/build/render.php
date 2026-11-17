@@ -16,6 +16,9 @@ $attributes = ig_migrate_style_one_attributes( $attributes );
 // block's Code Editor) before it reaches the front end.
 $attributes = ig_sanitize_link_attributes( $attributes );
 
+// Add srcset data for Media Library images (render-time only, not stored).
+$attributes = ig_add_responsive_sources( $attributes );
+
 $json_attributes = wp_json_encode($attributes);
 
 // Fallback in case wp_json_encode fails
